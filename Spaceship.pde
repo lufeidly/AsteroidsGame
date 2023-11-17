@@ -5,8 +5,8 @@ class Spaceship extends Floater
      myCenterY = 250;
      myColor = 255;
      corners = 4;
-     myXspeed = 0;
-     myYspeed = 0;
+     myXspeed = 1;
+     myYspeed = 1;
      myPointDirection = 270;
      xCorners = new int[corners];
      yCorners = new int[corners];
@@ -19,17 +19,24 @@ class Spaceship extends Floater
      xCorners[3] = -2;
      yCorners[3] = 0;
    }
-  
+  public void setCenterX(double x) {
+    myCenterX = x;
+  }
+    public void setCenterY(double y) {
+    myCenterX = y;
+    }
     public void setXspeed(double x) {
       myXspeed = x;
    }
    public void setYspeed(double y) {
      myYspeed = y;
    }
-   public void keyPressed()
-   {
-     if(key == '0')
-     lufei.setXspeed(0);
-     lufei.setYspeed(0);
-   }
+   //public void keyPressed()
+   //{
+   //  if(key == '0')
+   //  myCenterX = (Math.random() * 200) + 10;
+   //  myCenterY = (Math.random() * 200) + 10;
+   //  lufei.setXspeed(1);
+   //  lufei.setYspeed(1);
+   //}
 }
