@@ -30,7 +30,7 @@ public void keyPressed(){
     else if(key=='w')
       lufei.accelerate(1);
       
-     if(key == '0'){
+     if(key == 's'){
      lufei.setCenterX((Math.random() * 500));
      lufei.setCenterY((Math.random() * 500));
      lufei.setXspeed(1);
