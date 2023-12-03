@@ -10,18 +10,25 @@
 //Add code to the draw() in AsteroidsGame.pde to move() the Spaceship
 //Finish the Star class in Star.pde
 //Finally, add code to AsteroidsGame.pde that declares and initializes an array of instances of the Star class to create a number of stars in random positions
-
 Spaceship lufei;
-Star[] night = new Star[500];
+Asteroid goofy;
 
-public void setup() 
+Star[] night = new Star[500];
+ArrayList <Asteroid> list = new ArrayList <Asteroid>();
+
+void setup() 
 {
   size(500,500);
     for (int i = 0; i < night.length; i++){
     night[i] = new Star();
-  lufei = new Spaceship();
-}
-}
+    lufei = new Spaceship();
+    }
+    list.add(new Asteroid());
+    list.add(new Asteroid());
+    list.add(new Asteroid());
+    list.add(new Asteroid());
+    list.add(new Asteroid());
+    }
     
 public void draw() 
 {
@@ -32,16 +39,26 @@ public void draw()
     }
     lufei.move();
     lufei.show();
+    
+    for(int i = 0; i < list.size(); i++)
+    {
+    list.get(i).move();
+    list.get(i).show();
+    if (dist((float)list.get(i).myCenterX,(float) list.get(i).myCenterY, (float)lufei.myCenterX, (float)lufei.myCenterY) < 20) {
+      list.remove(i);
+    }   
+    }
 }
 public void keyPressed(){
   if(keyPressed){
     if(key=='a')
       lufei.turn(-20);
-    else if(key=='d')
+    if(key=='d')
       lufei.turn(20);
-    else if(key=='w')
+    if(key=='w')
       lufei.accelerate(1);
       
+      //hyperspace
      if(key == 's'){
      lufei.setCenterX((Math.random() * 500));
      lufei.setCenterY((Math.random() * 500));
