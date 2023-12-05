@@ -36,12 +36,6 @@ class Asteroid extends Floater
      xCorners[5] = -5;
      yCorners[5] = 0;
      }
-       public double getCenterX() {
-       return myCenterX;
-       }
-      public double getCenterY() {
-       return myCenterY;
-       }
      public void move()
      {
      turn((double)rotSpeed);
