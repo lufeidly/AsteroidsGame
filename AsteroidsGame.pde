@@ -15,7 +15,7 @@ Asteroid goofy;
 
 Star[] night = new Star[500];
 ArrayList <Asteroid> list = new ArrayList <Asteroid>();
-
+ArrayList <Bullet> pew = new ArrayList <Bullet>();
 void setup() 
 {
   size(500,500);
@@ -39,7 +39,12 @@ public void draw()
     }
     lufei.move();
     lufei.show();
-    
+    for(int i = 0; i < pew.size(); i++){
+    pew.get(i).show();
+    pew.get(i).move();
+     //if (dist((float)pew.get(i).myCenterX,(float) pew.get(i).myCenterY, (float)lufei.myCenterX, (float)lufei.myCenterY) < 20){
+     // pew.remove(i);
+    }
     for(int i = 0; i < list.size(); i++)
     {
     list.get(i).move();
@@ -57,6 +62,10 @@ public void keyPressed(){
       lufei.turn(20);
     if(key=='w')
       lufei.accelerate(1);
+      
+      //bullet
+      if(key == 'y')
+      pew.add(new Bullet(lufei));
       
       //hyperspace
      if(key == 's'){
