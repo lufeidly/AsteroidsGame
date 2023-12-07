@@ -42,14 +42,25 @@ public void draw()
     for(int i = 0; i < pew.size(); i++){
     pew.get(i).show();
     pew.get(i).move();
-     //if (dist((float)pew.get(i).myCenterX,(float) pew.get(i).myCenterY, (float)lufei.myCenterX, (float)lufei.myCenterY) < 20){
-     // pew.remove(i);
+    //ask mr. williams for help
+    if(pew.get(i).getX() > 500 || pew.get(i).getX() < 0 || pew.get(i).getY() > 500 || pew.get(i).getY() < 0){
+    pew.remove(i);
+       }
     }
+    for(int i = 0; i < pew.size(); i++){
+    for(int j = 0; j < list.size(); i++)
+    //ask mr williams
+    if(dist((float)list.get(i).myCenterX,(float)list.get(i).myCenterY, (float)pew.get(i).myCenterX, (float)pew.get(i).myCenterY)){
+      list.remove(i);
+      pew.remove(i);
+    }
+    }
+    
     for(int i = 0; i < list.size(); i++)
     {
     list.get(i).move();
     list.get(i).show();
-    if (dist((float)list.get(i).myCenterX,(float) list.get(i).myCenterY, (float)lufei.myCenterX, (float)lufei.myCenterY) < 20) {
+    if (dist((float)list.get(i).myCenterX,(float)list.get(i).myCenterY, (float)lufei.myCenterX, (float)lufei.myCenterY) < 20) {
       list.remove(i);
     }   
     }
