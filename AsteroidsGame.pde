@@ -12,6 +12,7 @@
 //Finally, add code to AsteroidsGame.pde that declares and initializes an array of instances of the Star class to create a number of stars in random positions
 Spaceship lufei;
 Asteroid goofy;
+//break statement stops the loop forces loop to stop
 
 Star[] night = new Star[500];
 ArrayList <Asteroid> list = new ArrayList <Asteroid>();
@@ -42,22 +43,18 @@ public void draw()
     for(int i = 0; i < pew.size(); i++){
     pew.get(i).show();
     pew.get(i).move();
-    //ask mr. williams for help
-    if(pew.get(i).getX() > 500 || pew.get(i).getX() < 0 || pew.get(i).getY() > 500 || pew.get(i).getY() < 0){
-    pew.remove(i);
        }
-    }
-    for(int i = 0; i < pew.size(); i++){
-    for(int j = 0; j < list.size(); i++)
-    //ask mr williams
-    if(dist((float)list.get(i).myCenterX,(float)list.get(i).myCenterY, (float)pew.get(i).myCenterX, (float)pew.get(i).myCenterY)){
-      list.remove(i);
-      pew.remove(i);
-    }
-    }
     
-    for(int i = 0; i < list.size(); i++)
-    {
+    //for(int i = 0; i < pew.size(); i++){
+    //for(int j = 0; j < list.size(); i++)
+    ////ask mr williams
+    ////doubl(dist(list.get(j).myCenterX,list.get(j).myCenterY, pew.get(i).myCenterX, pew.get(i).myCenterY)){
+    //  list.remove(i);
+    //  pew.remove(i);
+    ////}
+    //}
+    
+    for(int i = 0; i < list.size(); i++){
     list.get(i).move();
     list.get(i).show();
     if (dist((float)list.get(i).myCenterX,(float)list.get(i).myCenterY, (float)lufei.myCenterX, (float)lufei.myCenterY) < 20) {
