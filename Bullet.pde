@@ -26,4 +26,12 @@ class Bullet extends Floater
        public double getPointDirection() {
          return myPointDirection;
        }
+       public void move() {
+         myCenterX += myXspeed;   
+         myCenterY += myYspeed;
+         for(int i = 0; i < pew.size(); i++){
+         if(myCenterX > 500 || myCenterX < 0 || myCenterY > 500 || myCenterY < 0)
+         pew.remove(i);
+         }
+       }
 }
