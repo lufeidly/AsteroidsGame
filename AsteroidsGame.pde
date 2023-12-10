@@ -45,14 +45,13 @@ public void draw()
     pew.get(i).move();
        }
     
-    //for(int i = 0; i < pew.size(); i++){
-    //for(int j = 0; j < list.size(); i++)
-    ////ask mr williams
-    ////doubl(dist(list.get(j).myCenterX,list.get(j).myCenterY, pew.get(i).myCenterX, pew.get(i).myCenterY)){
-    //  list.remove(i);
-    //  pew.remove(i);
-    ////}
-    //}
+    for(int i = 0; i < pew.size(); i++){
+    for(int j = 0; j < list.size(); j++)
+    if(dist((float)list.get(j).getX(), (float)list.get(j).getY(), (float)pew.get(i).getX(), (float)pew.get(i).getY()) < 20){
+      pew.remove(i);
+      list.remove(j);
+    }
+    }
     
     for(int i = 0; i < list.size(); i++){
     list.get(i).move();
