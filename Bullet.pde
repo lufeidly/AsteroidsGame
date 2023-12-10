@@ -6,9 +6,10 @@ class Bullet extends Floater
     myXspeed = lufei.getXspeed();
     myYspeed = lufei.getYspeed();
     myPointDirection = lufei.getPointDirection();
-    accelerate(10);
+    accelerate(20);
   }  
   public void show(){
+    //fill((int)(Math.random()*250), (int)(Math.random()*250), (int)(Math.random()*250));
     ellipse((float)myCenterX,(float)myCenterY,10,10);
   }
       public double getX() {
