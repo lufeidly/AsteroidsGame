@@ -46,13 +46,14 @@ public void draw()
        }
     
     for(int i = 0; i < pew.size(); i++){
-    for(int j = 0; j < list.size(); j++)
+    for(int j = 0; j < list.size(); j++){
     if(dist((float)list.get(j).getX(), (float)list.get(j).getY(), (float)pew.get(i).getX(), (float)pew.get(i).getY()) < 20){
       pew.remove(i);
       list.remove(j);
     }
     }
-    
+    }
+    //ask mr williams for help
     for(int i = 0; i < list.size(); i++){
     list.get(i).move();
     list.get(i).show();
