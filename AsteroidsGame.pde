@@ -50,6 +50,7 @@ public void draw()
     if(dist((float)list.get(j).getX(), (float)list.get(j).getY(), (float)pew.get(i).getX(), (float)pew.get(i).getY()) < 20){
       pew.remove(i);
       list.remove(j);
+      break;
     }
     }
     }
